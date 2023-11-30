@@ -77,7 +77,7 @@ xscope_file_t xscope_open_file(const char* filename, char* attributes){
     strcpy(&packet[2], xscope_file.filename);
     xscope_file.index = file_idx;
     xscope_bytes(XSCOPE_ID_OPEN_FILE, length, (const unsigned char *)packet);
-    file_idx++;
+    //file_idx++;
     xscope_fileio_lock_release();
     if(file_idx == MAX_FILES_OPEN){
         printf("Maximum number of files open exceeded (%u)", MAX_FILES_OPEN);
